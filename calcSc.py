@@ -1,4 +1,3 @@
-import sys
 import math
 import tkinter as tk
 from tkinter import *
