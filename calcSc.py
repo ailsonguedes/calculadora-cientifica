@@ -53,6 +53,37 @@ def log():
     field.delete("1.0", "end")
     field.insert("1.0", resLog, 'tag-right')
 
+def tan():
+    global field_text
+    res = float(field_text)
+    resTan = math.tan(res)
+    print(resTan)
+    field.delete("1.0", "end")
+    field.insert("1.0", resTan, 'tag-right')
+
+def sin():
+    global field_text
+    res = float(field_text)
+    resSin = math.sin(res)
+    print(resSin)
+    field.delete("1.0", "end")
+    field.insert("1.0", resSin, 'tag-right')
+    
+def euler():
+    global field_text
+    res = float(field_text)
+    resEu = math.e * res
+    print(resEu)
+    field.delete("1.0", "end")
+    field.insert("1.0", resEu, 'tag-right') 
+    
+def factori():
+    global field_text
+    res = float(field_text)
+    resFactori = math.factorial(res)
+    field.delete("1.0", "end")
+    field.insert("1.0", resFactori, 'tag-right') 
+    
 color1 = "#BBB09B" #Khaki
 color2 = "#D7BBA8" #Desert Sand
 color3 = "#EFA8B8" #Cherry Blossom Pink
@@ -123,25 +154,25 @@ buttonC = Button(mainScreen, width=8, height=2, text="C", command= lambda: clear
 buttonC.place(x=540, y=185)
 
 # primeira fileira dos botoes de expressão
-buttonSin= Button(mainScreen, width=8, height=2, text="e", relief='raised', fg="white", bg=color5)
-buttonSin.place(x=30, y=320)
-buttonCos= Button(mainScreen, width=8, height=2, text="In", command= lambda: cos(), relief='raised', fg="white", bg=color5)
-buttonCos.place(x=100, y=320)
+buttonEuler= Button(mainScreen, width=8, height=2, text="e", command= lambda: euler(), relief='raised', fg="white", bg=color5)
+buttonEuler.place(x=30, y=320)
+buttonIn= Button(mainScreen, width=8, height=2, text="In", relief='raised', fg="white", bg=color5)
+buttonIn.place(x=100, y=320)
 buttonLogarithm = Button(mainScreen, width=8, height=2, text="log", command= lambda: log(), relief='raised', fg="white", bg=color5)
 buttonLogarithm.place(x=170, y=320)
 # segunda fileira dos botoes de expressão
-buttonSin= Button(mainScreen, width=8, height=2, text="sin", relief='raised', fg="white", bg=color5)
+buttonSin= Button(mainScreen, width=8, height=2, text="sin", command= lambda: sin(), relief='raised', fg="white", bg=color5)
 buttonSin.place(x=30, y=275)
-buttonCos= Button(mainScreen, width=8, height=2, text="cos", relief='raised', fg="white", bg=color5)
+buttonCos= Button(mainScreen, width=8, height=2, text="cos", command= lambda: cos(), relief='raised', fg="white", bg=color5)
 buttonCos.place(x=100, y=275)
-buttonTan = Button(mainScreen, width=8, height=2, text="tan", relief='raised', fg="white", bg=color5)
+buttonTan = Button(mainScreen, width=8, height=2, text="tan", command= lambda: tan(), relief='raised', fg="white", bg=color5)
 buttonTan.place(x=170, y=275)
 # terceira fileira dos botoes de expressão
 buttonInv = Button(mainScreen, width=8, height=2, text="INV", relief='raised', fg="white", bg=color5)
 buttonInv.place(x=30, y=230)
 buttonExponentiation= Button(mainScreen, width=8, height=2, text="^", command= lambda: add_to_field("**"), relief='raised', fg="white", bg=color5)
 buttonExponentiation.place(x=100, y=230)
-buttonFactorial = Button(mainScreen, width=8, height=2, text="!", relief='raised', fg="white", bg=color5)
+buttonFactorial = Button(mainScreen, width=8, height=2, text="!", command= lambda: factori(), relief='raised', fg="white", bg=color5)
 buttonFactorial.place(x=170, y=230)
 # quarta fileira dos botoes de expressão
 buttonRad = Button(mainScreen, width=8, height=2, text="RAD", relief='raised', fg="white", bg=color5)
